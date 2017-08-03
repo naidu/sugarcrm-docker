@@ -33,14 +33,14 @@ elasticsearch_crm:
   volumes:
     - ./docker/config/elasticsearch:/usr/share/elasticsearch/config
 
-phpmyadmin:
-  image: phpmyadmin/phpmyadmin
-  container_name: amstar_sugar_phpmyadmin
-  links:
-    - mysql_crm
-  ports:
-    - 8181:80
-  environment:
-    - PMA_HOST=mysql_crm
-    - PMA_USER=sugarcrm
-    - PMA_PASSWORD=sugarcrm
+# phpmyadmin:
+#   image: phpmyadmin/phpmyadmin
+#   container_name: amstar_sugar_phpmyadmin
+#   links:
+#     - mysql_crm
+#   ports:
+#     - 8181:80
+#   environment:
+#     - PMA_HOST=mysql_crm
+#     - PMA_USER=sugarcrm
+#     - PMA_PASSWORD=sugarcrm
