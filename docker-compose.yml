@@ -1,16 +1,18 @@
 sugarcrm:
   image: intelestream/sugarcrm:latest
   command: apache2-foreground
+  container_name: amstar_sugar  
   links:
     - mysql_crm
     - elasticsearch_crm
   volumes:
     - .:/app
   ports:
-    - "80:80"
+    - "8080:80"
 
 mysql_crm:
   image: mysql:5.6
+  container_name: amstar_sugar_mysql
   ports:
     - "3307:3306"
   environment:
@@ -24,6 +26,7 @@ mysql_crm:
 
 elasticsearch_crm:
   image: elasticsearch:1.4
+  container_name: amstar_sugar_elastic
   ports:
     - "9200:9200"
     - "9300:9300"
@@ -32,6 +35,7 @@ elasticsearch_crm:
 
 phpmyadmin:
   image: phpmyadmin/phpmyadmin
+  container_name: amstar_sugar_phpmyadmin
   links:
     - mysql_crm
   ports:
